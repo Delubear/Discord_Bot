@@ -1,10 +1,13 @@
-﻿using DSharpPlus.CommandsNext;
+﻿using Discord_Bot.Models;
+using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace Discord_Bot.Commands
 {
@@ -18,10 +21,13 @@ namespace Discord_Bot.Commands
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(Url);
+            string test = "replace me";
             if (response.IsSuccessStatusCode)
             {
-                Items = await response.Content.ReadAsAsync<SarahsItem>();
+                
+                test = await response.Content.ReadAsStringAsync();
             }
+            await ctx.RespondAsync(test);
         }
     }
 }
