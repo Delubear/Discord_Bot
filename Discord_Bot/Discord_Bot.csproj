@@ -10,4 +10,10 @@
     <PackageReference Include="DSharpPlus.CommandsNext" Version="3.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="DiscordSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -12,7 +12,12 @@ namespace Discord_Bot
         public static DiscordClient discord;
         static CommandsNextModule commands;
 
-        static async Task Main(string[] args)
+        static void Main()
+        {
+            MainAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+
+        static async Task MainAsync()
         {
             var token = File.ReadAllText("DiscordSettings.json");
             var code = JsonConvert.DeserializeObject<BotKey>(token);
