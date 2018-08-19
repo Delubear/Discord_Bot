@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Discord_Bot.Models
 {
-    class SarahsItem
+    public class SarahsItem
     {
         public string Id { get; set; }
         public string Name { get; set; }
